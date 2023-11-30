@@ -1,0 +1,51 @@
+===============================================================
+User:
+---------------------------------------------------------------
+*name,password,mobile->mobile check api || register api 
+*login
+*list of user chits based on mobile no 
+  	-chit
+		-start date & end date
+		-chit current amount to pay
+		-participents
+	-paymenyt history:
+		-chit month
+		-chit amount				
+	-chit history 
+		-month
+		-amount
+		-name
+===================================================================
+chit maintainer:
+-------------------------------------------------------------------
+*register
+	-name
+	-mobile
+	-password
+*login
+	-mobile
+	-password
+*2 tabs
+	-chit created by me->list of created chits
+		-how many paid
+		-partcipants -paid button
+		-details		
+	-chits i am associated with
+*create chit
+	-chit name;
+	-chit amount;
+	-chit duration;
+	-chit start month;
+	-maintainer charges;
+	
+
+
+	
+	
+
+
+
+
+
+
+
