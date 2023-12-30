@@ -1,22 +1,14 @@
-package com.Ychits.data.entity;
+package com.Ychits.data.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 @Data
-public class User {
-    private String id;
+public class AddUser {
     private String name;
     private String email;
     private String mobile;
-    @JsonIgnore
     private String password;
     private String address;
     private String userType;
-    public User(String email, String password) {
-        this.email = email;
-        this.password = password;
-    }
-    public User() {
-    }
 }
