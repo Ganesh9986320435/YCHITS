@@ -9,9 +9,11 @@ import org.hibernate.validator.constraints.Length;
 import java.time.LocalDate;
 @Data
 public class AddChit {
+    private String userId;
     private String name;
     private String amount;
-    private LocalDate startData;
-    private LocalDate endDate;
+    private LocalDate startMonth;
+    private LocalDate endMonth;
+    private long durationInMonths;
     private String maintainerCharge;
 }

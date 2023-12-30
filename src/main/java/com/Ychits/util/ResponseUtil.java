@@ -44,4 +44,13 @@ public class ResponseUtil {
         return ResponseEntity.status(apiResponse.getStatusCode()).body(apiResponse);
     }
 
+    public static ResponseEntity<ApiResponse> getAlreadyExistResponse(Object response)
+    {
+        ApiResponse apiResponse=initApiResponse();
+        apiResponse.setHttpStatus(HttpStatus.ALREADY_REPORTED);
+        apiResponse.setStatusCode(HttpStatus.ALREADY_REPORTED.value());
+        apiResponse.setResponse(response);
+        return ResponseEntity.status(apiResponse.getStatusCode()).body(apiResponse);
+    }
+
 }
