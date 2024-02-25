@@ -69,12 +69,12 @@ public class UserController {
 
         try {
             Authentication authentication =
-                    authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginReq.getEmail(), loginReq.getPassWord()));
+                    authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginReq.getEmail(), loginReq.getPassword()));
             String email = authentication.getName();
             User user = new User(email,"");
             String token = jwtUtil.createToken(user);
             User loggedUser=userRepository.findByEmail(user.getEmail());
-            LoginResponse loginRes = new LoginResponse(loggedUser.getId(),token);
+            LoginResponse loginRes = new LoginResponse(loggedUser.getId(), loggedUser.getUserType(),token);
             return ResponseEntity.ok(loginRes);
 
         }catch (BadCredentialsException e){
