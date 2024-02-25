@@ -103,7 +103,7 @@ public class ChitDao {
     }
 
     public ResponseEntity<ApiResponse> getChitsAssociatedTo(String userId) {
-        return ResponseUtil.getOkResponse(chitRepository.findAll().stream().filter(chit -> chit.getUserId().contains(userId)).toList());
+        return ResponseUtil.getOkResponse(chitRepository.findAll().stream().filter(chit -> Objects.nonNull(chit.getUserId()) && chit.getUserId().contains(userId)).toList());
     }
 
     public ResponseEntity<ApiResponse> getChitsMaintainedBy(String userId) {
