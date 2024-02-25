@@ -1,0 +1,29 @@
+services:
+
+  y_chits:
+    image: y_chits
+    container_name: y_chits
+    build:
+      context: ../ychits
+      dockerfile: Dockerfile
+    ports:
+      - 1001:1001
+    networks:
+      - app_network
+    depends_on:
+      - mongodb1
+
+  mongodb1:
+    image: mongo
+    #    command: mongod --auth
+    container_name: mongodb1
+    ports:
+      - 27017:27017
+    volumes:
+      - ../../data:/data/db
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
