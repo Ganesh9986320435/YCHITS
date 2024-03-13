@@ -1,24 +1,24 @@
-services:
+version: '3'
 
+services:
   y_chits:
-    image: y_chits
+    image: arunawsdevops/ychits
     container_name: y_chits
     build:
-      context: ../ychits
+      context: /home/ec2-user/YCHITS
       dockerfile: Dockerfile
     ports:
-      - 1001:1001
-    networks:
-      - app_network
+      - "1003:1001"
     depends_on:
       - mongodb1
+    networks:
+      - app_network
 
   mongodb1:
     image: mongo
-    #    command: mongod --auth
     container_name: mongodb1
     ports:
-      - 27017:27017
+      - "27017:27017"
     volumes:
       - ../../data:/data/db
     networks:
@@ -27,3 +27,4 @@ services:
 networks:
   app_network:
     driver: bridge
+
